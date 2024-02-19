@@ -42,3 +42,4 @@ export const initialCurrentUser:ICurrentUser = {
 	fullName: '',
 	accessGroups: ''
 }
+

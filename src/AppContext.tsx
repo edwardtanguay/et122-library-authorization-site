@@ -69,7 +69,6 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 			});
 			if (response.status === 200) {
 				const _currentUser = response.data.currentUser;
-				console.log(_currentUser);
 				setCurrentUser(_currentUser);
 			}
 		} catch (e) {

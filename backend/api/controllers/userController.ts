@@ -96,7 +96,7 @@ export const loginUser = async (req: any, res: express.Response) => {
 		if (user !== null) {
 			const seconds = 10;
 			jwt.sign(
-				{ user },
+				{ user }, // should be currentUser
 				config.sessionSecret(),
 				{ expiresIn: seconds + "s" },
 				(err: any, token: any) => {
