@@ -19,15 +19,15 @@ let children = [
 		element: <PageWelcome />,
 	},
 	{
-		path: "books",
+		path: "/books",
 		element: <PageBooks />,
 	},
 	{
-		path: "users",
+		path: "/users",
 		element: <PageUsers />,
 	},
 	{
-		path: "login",
+		path: "/login",
 		element: <PageLogin />,
 	},
 	{
