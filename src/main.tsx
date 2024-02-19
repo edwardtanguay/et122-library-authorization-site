@@ -13,33 +13,38 @@ import { PageUsers } from "./pages/PageUsers.tsx";
 import { AppProvider } from "./AppContext.tsx";
 import { PageLogin } from "./pages/PageLogin.tsx";
 
+let children = [
+	{
+		path: "/welcome",
+		element: <PageWelcome />,
+	},
+	{
+		path: "books",
+		element: <PageBooks />,
+	},
+	{
+		path: "users",
+		element: <PageUsers />,
+	},
+	{
+		path: "login",
+		element: <PageLogin />,
+	},
+	{
+		path: "/",
+		element: <Navigate to="/welcome" replace />,
+	},
+];
+// take out user object
+children = children.filter(m => m.path !== 'users');
+console.log(children);
+
 const router = createBrowserRouter([
 	{
 		path: "/",
 		errorElement: <Page404 />,
 		element: <App />,
-		children: [
-			{
-				path: "/welcome",
-				element: <PageWelcome />,
-			},
-			{
-				path: "books",
-				element: <PageBooks />,
-			},
-			{
-				path: "users",
-				element: <PageUsers />,
-			},
-			{
-				path: "login",
-				element: <PageLogin />,
-			},
-			{
-				path: "/",
-				element: <Navigate to="/welcome" replace />,
-			},
-		],
+		children
 	},
 ]);
 
