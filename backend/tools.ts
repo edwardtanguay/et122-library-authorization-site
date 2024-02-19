@@ -25,5 +25,6 @@ export const handleError = (res: express.Response, error: any) => {
 export const getCurrentUserFromUser = (user: any) => {
 	return {
 		fullName: `${user.firstName} ${user.lastName}`,
+		accessGroups: user.accessGroups
 	};
 };

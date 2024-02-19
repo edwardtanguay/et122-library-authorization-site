@@ -68,9 +68,8 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 			});
 			if (response.status === 200) {
 				const _currentUser = response.data.currentUser;
+				console.log(_currentUser);
 				setCurrentUser(_currentUser);
-			} else {
-				setCurrentUser(structuredClone(initialCurrentUser));
 			}
 		} catch (e) {
 			setCurrentUser(structuredClone(initialCurrentUser));
@@ -139,7 +138,7 @@ export const AppProvider: React.FC<IAppProvider> = ({ children }) => {
 
 	const handleLogout = (onLoggedOut: () => void) => {
 		localStorage.removeItem('token');
-		setCurrentUser(structuredClone(initialCurrentUser));
+		loadCurrentUser();
 		onLoggedOut();
 	}
 

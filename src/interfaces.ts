@@ -34,8 +34,10 @@ export const initialLoginformData = {
 
 export interface ICurrentUser {
 	fullName: string;
+	accessGroups: string;
 }
 
 export const initialCurrentUser:ICurrentUser = {
-	fullName: ''
+	fullName: '',
+	accessGroups: ''
 }
